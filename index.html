@@ -80,6 +80,15 @@
 
    }
 
+   #sankey1 #sankey2 #sankey3 #sankey4 {
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    opacity: 0;
+    transition: opacity 1.2s;
+    -webkit-transition: opacity 1.2s;
+   }
+
    .text1opacity {
         font-size:30px;
         fill:blue;
@@ -87,6 +96,18 @@
         transition: opacity 0.8s;
          -webkit-transition: opacity 0.8s;
         }
+
+    #h-work {
+         font-size:30px;
+         fill:blue;
+         opacity:0;
+         transition: opacity 0.8s;
+          -webkit-transition: opacity 0.8s;
+         }
+
+    #footnote {
+      font-size: 10px;
+    }
 
 	.active {
         	opacity:1;
@@ -167,44 +188,95 @@
        <br><br>
        <br><br>
        <br><br>
-     <p id="text45">While some migrants continue their past type of work in the United States, others find new roles after completing their journey. </p>
-     <p>
-     </p>
-
+     <p id="text51">While some migrants continue their past type of work in the United States, others find new roles after completing their journey.
+       Data shows that unemployment is very low among these populations -- under 1% in most cases -- and a small fraction of the US average as a whole.
+       These, and other transitions in work lifestyle, represent big changes for the migrants who experience them. </p>
      <br><br>
-
-      <p id="text5"> For instance, some agricultural workers go to work in informal labor sectors, such as chicken plants and factories. Other former agricultural workers go on to be salaried employees in various sectors like transportation.</p>
-
+     <br><br>
       <br><br>
-
-      <p> A large number of students find employment upon arrival, making their early entrance into the workforce and starting careers.
- Data shows that unemployment is very low among these populations -- under 1% in most cases -- and a small fraction of the US average as a whole.
- These, and other transitions in work lifestyle, represent big changes for the migrants who experience them. </p>
       <br><br>
-      <p id="text6"> By understanding the journey to a new career, lifestyle, and region, we can start to learn more about the daily experiences of migrants who are adjusting to a wave of changes. We hope to begin telling a more nuanced story about the realities and decisions faced through insight on the journey, work-life, and (eventually) financial balances experienced. Stay tuned for our final project!
-</p>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-
+      <br><br>
+      <p id="text52"> For instance, some agricultural workers go to work in informal labor sectors, such as chicken plants and factories. Other former agricultural workers go on to be salaried employees in various sectors like transportation.</p>
+      <br><br>
+      <br><br>
+      <br><br>
+      <br><br>
+      <br><br>
+      <br><br>
+      <p id="text53"> Others continue in informal work, move to salaried positions, or start their own businesses. </p>
+      <br><br>
+      <br><br>
+      <br><br>
+      <br><br>
+      <br><br>
+      <br><br>
+      <br><br>
+      <p id="text54"> And a large number of students find employment upon arrival, making their early entrance into the workforce and starting careers. </p>
+      <br><br>
+      <br><br>
+      <br><br>
+      <br><br>
+      <br><br>
+      <br><br>
+      <br><br>
+      <br><br>
+      <br><br>
+      <p id="textsankeyhtml"> Want to dig deeper? Explore for yourself by hovering over the image with your cursor. These paths reflect the past and present journeys of more than 1,000 Northern Triangle migrants --
+      as surveyed by the UN World Food Program in 2020. </p>
+      <br><br>
+      <br><br>
+      <br><br>
+      <br><br>
+      <br><br>
+      <br><br>
+      <br><br>
+      <br><br>
+      <p id="text6"> By understanding the journey to a new career, lifestyle, and region, we can start to learn more about the daily experiences of migrants who are adjusting to a wave of changes.
+        We hope to begin telling a more nuanced story about the realities and decisions faced through insight on the journey, work-life, and (eventually) financial balances experienced.
+        Stay tuned for our final project!
+      </p>
+      <br><br>
+      <br><br>
+      <br><br>
+      <br><br>
+      <br><br>
+      <br><br>
+      <br><br>
+      <br><br>
+      <br><br>
+      <br><br>
       <br><br>
      </div>
 
      <div class="col-8">
 
-       <div id="firstvisualdiv2">
-              <p class="text1opacity"> LOCAL ECONOMIES: where migrants join the local workforce </p>
+       <div id="h-work">
+              <p> LOCAL ECONOMIES: where migrants join the local workforce </p>
        </div>
 
-       <div id="secondvisualdiv2">
-               <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~watkin/1.embed" height="525" width="100%"></iframe>
+       <div id="sankey1`">
+         <img src="assets/img/PROJ_sankey.png">
+         <p id="footnote"> Source: UN WFP Survey (2020). Responses of "Does not apply", "Other", or "NS / NR" (blank) are not included in the diagram. </p>
+       </div>
+
+       <div id="sankey2">
+         <img src="assets/img/PROJ_sankey_Agriculture.png">
+         <p id="footnote"> Source: UN WFP Survey (2020). Responses of "Does not apply", "Other", or "NS / NR" (blank) are not included in the diagram. </p>
+       </div>
+
+       <div id="sankey3">
+         <img src="assets/img/PROJ_sankey_Informal_work.png">
+         <p id="footnote"> Source: UN WFP Survey (2020). Responses of "Does not apply", "Other", or "NS / NR" (blank) are not included in the diagram. </p>
+       </div>
+
+       <div id="sankey4">
+         <img src="assets/img/PROJ_sankey_Student.png">
+         <p id="footnote"> Source: UN WFP Survey (2020). Responses of "Does not apply", "Other", or "NS / NR" (blank) are not included in the diagram. </p>
+       </div>
+
+       <div id="sankeyhtml">
+               <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~watkin/6.embed" height="525" width="100%"></iframe>
+               <p id="footnote"> Source: UN WFP Survey (2020). Responses of "Does not apply", "Other", or "NS / NR" (blank) are not included in the diagram. </p>
        </div>
      </div>
   </div>
@@ -225,35 +297,72 @@
               .addTo(controller);
 
     	new ScrollMagic.Scene({triggerElement: "#text2"})
-        	.setClassToggle(".img", "active")
+        	.setClassToggle("#secondvisualdiv", "active")
         	.addTo(controller);
+
+      new ScrollMagic.Scene({triggerElement: "#text2"})
+          .setClassToggle(".img", "active")
+          .addTo(controller);
 /*
           new ScrollMagic.Scene({triggerElement: "#text2"})
               .setClassToggle("#firstvisualdiv2", "deactive")
               .addTo(controller);
 */
-		new ScrollMagic.Scene({triggerElement: "#text45"})
-        	.setClassToggle(".img", "deactive")
+		new ScrollMagic.Scene({triggerElement: "#text51"})
+        	.setClassToggle("#secondvisualdiv", "deactive")
         	.addTo(controller);
 
     /*      new ScrollMagic.Scene({triggerElement: "#text45"})
               .setClassToggle("#secondvisualdiv2", "deactive")
               .addTo(controller);
 */
-            new ScrollMagic.Scene({triggerElement: "#text45"})
-                .setClassToggle("#firstvisualdiv2", "active")
+            new ScrollMagic.Scene({triggerElement: "#text51"})
+                .setClassToggle("#h-work", "active")
                 .addTo(controller);
 
-        new ScrollMagic.Scene({triggerElement: "#text5"})
-            .setClassToggle("#firstvisualdiv2", "deactive")
-            .addTo(controller);
+                new ScrollMagic.Scene({triggerElement: "#text51"})
+                    .setClassToggle("#sankey1", "active")
+                    .addTo(controller);
 
-            new ScrollMagic.Scene({triggerElement: "#text5"})
-                .setClassToggle("#secondvisualdiv2", "active")
+                new ScrollMagic.Scene({triggerElement: "#text52"})
+                    .setClassToggle("#firstvisualdiv2", "deactive")
+                    .addTo(controller);
+
+                    new ScrollMagic.Scene({triggerElement: "#text52"})
+                        .setClassToggle("#sankey1", "deactive")
+                        .addTo(controller);
+
+                new ScrollMagic.Scene({triggerElement: "#text52"})
+                    .setClassToggle("#sankey2", "active")
+                    .addTo(controller);
+
+            new ScrollMagic.Scene({triggerElement: "#text53"})
+                .setClassToggle("#sankey2", "deactive")
                 .addTo(controller);
+
+                new ScrollMagic.Scene({triggerElement: "#text53"})
+                    .setClassToggle("#sankey3", "active")
+                    .addTo(controller);
+
+            new ScrollMagic.Scene({triggerElement: "#text54"})
+                .setClassToggle("#sankey3", "deactive")
+                .addTo(controller);
+
+                new ScrollMagic.Scene({triggerElement: "#text54"})
+                    .setClassToggle("#sankey4", "active")
+                    .addTo(controller);
+
+              new ScrollMagic.Scene({triggerElement: "#textsankeyhtml"})
+                  .setClassToggle("#sankey4", "deactive")
+                  .addTo(controller);
+
+                  new ScrollMagic.Scene({triggerElement: "#textsankeyhtml"})
+                      .setClassToggle("#sankeyhtml", "active")
+                      .addTo(controller);
 
         new ScrollMagic.Scene({triggerElement: "#text6"})
-            .setClassToggle("#secondvisualdiv2", "deactive")
+            .setClassToggle("#sankeyhtml", "deactive")
+            // .setClassToggle("#sankey4", "active")
             .addTo(controller);
 
 </script>
