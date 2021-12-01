@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title> Mapping Migration's Mutual Benefits </title>
+    <title> Migration's Mutual Benefits </title>
    	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
@@ -96,18 +96,63 @@
     max-height: 100%;
     position: relative;
     opacity: 0;
-    transition: opacity 1.2s;
-    -webkit-transition: opacity 1.2s;
+    transition: opacity 0.8s;
+    -webkit-transition: opacity 0.8s;
 
    }
-
-   #sankey1 #sankey2 #sankey3 #sankey4 {
+/*   #sankey1 #sankey2 #sankey3 #sankey4 {
     max-width: 100%;
     max-height: 100%;
-    position: relative;
+    position: fixed;
     opacity: 0;
-    transition: opacity 1.2s;
-    -webkit-transition: opacity 1.2s;
+    transition: opacity 0.8s;
+    -webkit-transition: opacity 0.8s;
+   }
+*/
+
+.startinvisible{
+  opacity:0
+}
+
+   #sankey1{
+     position: fixed;
+     z-index:4;
+     bottom:100px;
+     right:300px;
+     transition: opacity 0.8s;
+     -webkit-transition: opacity 0.8s;
+   }
+   #sankey2{
+     position: fixed;
+     z-index:3;
+     bottom:100px;
+     right:300px;
+     transition: opacity 0.8s;
+     -webkit-transition: opacity 0.8s;
+    }
+   #sankey3{
+     position: fixed;
+     z-index:2;
+     bottom:100px;
+     right:300px;
+     transition: opacity 0.8s;
+     -webkit-transition: opacity 0.8s;
+      }
+   #sankey4{
+     position: fixed;
+     z-index:1;
+     bottom:100px;
+     right:300px;
+     transition: opacity 0.8s;
+     -webkit-transition: opacity 0.8s;
+      }
+
+   #sankeyhtml {
+     opacity:1;
+   }
+
+   #invisibletext{
+     opacity:0;
    }
 
    .text1opacity {
@@ -126,8 +171,16 @@
           -webkit-transition: opacity 0.8s;
          }
 
-    #footnote {
+         #footnote {
+           font-size: 10px;
+          }
+
+    #footnotefixed {
       font-size: 10px;
+      position: fixed;
+      bottom:100px;
+      right:320px;
+      z-index: 5;
     }
 
 	.active {
@@ -148,7 +201,7 @@
      <div class="row">
      	<div class="col-12">
      		<br><br>
-     		<h1> Mapping Migration's Mutual Benefits</h1>
+     		<h1 id="titletext"> Migration's Mutual Benefits</h1>
      	</div>
       <div class="col-12">
         <br><br>
@@ -204,9 +257,6 @@
 
 
      <div class="col-4">
-       <br><br>
-
-
        <h3 id="LocalJobs"> Local Jobs </h3>
 
      <p id="text51">According to <a href=http://migration.mit.edu/assets/mpi-wfp-mit_migration-motivations-costs_final.pdf> recent survey data</a> from the United Nations World Food Programme (UN WFP), more than half of migrants continue their past type of work in the destination country.
@@ -243,6 +293,10 @@
       <br><br>
       <br><br>
       <br><br>
+      <p id="invisibletext"> . </p>
+      <br><br>
+      <br><br>
+      <br><br>
       <br><br>
       <br><br>
       <br><br>
@@ -262,14 +316,65 @@
 
      <div class="col-8">
 
-       <div id="sankey1`">
-         <img src="assets/img/PROJ_sankey.png">
-         <p id="footnote"> Source: UN WFP Survey (2020). Responses of "Does not apply", "Other", or "NS / NR" (blank) are not included in the diagram. </p>
+       <div>
+         <br><br>
+         <img class="startinvisible" id="sankey1" src="assets/img/PROJ_sankey.png" style="z-index: 4"/>
+         <img class="startinvisible" id="sankey2" src="assets/img/PROJ_sankey_Agriculture.png" style="z-index: 3"/>
+         <img class="startinvisible" id="sankey3" src="assets/img/PROJ_sankey_Informal_work.png" style="z-index: 2"/>
+         <img class="startinvisible" id="sankey4" src="assets/img/PROJ_sankey_Student.png" style="z-index: 1"/>
+         <p class="startinvisible" id="footnotefixed"> Source: UN WFP Survey (2020). Responses of "Does not apply", "Other", or "NS / NR" (blank) are not shown. </p>
        </div>
        <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
 
-       <div id="sankey2">
-         <img src="assets/img/PROJ_sankey_Agriculture.png">
+<!--       <div id="sankey2">
+         <img src="assets/img/PROJ_sankey_Agriculture.png" style='z-index: 3'>
          <p id="footnote"> Source: UN WFP Survey (2020). Responses of "Does not apply", "Other", or "NS / NR" (blank) are not included in the diagram. </p>
        </div>
        <br><br>
@@ -285,9 +390,9 @@
          <p id="footnote"> Source: UN WFP Survey (2020). Responses of "Does not apply", "Other", or "NS / NR" (blank) are not included in the diagram. </p>
        </div>
        <br><br>
-
-       <div id="sankeyhtml">
-               <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~watkin/6.embed" height="525" width="100%"></iframe>
+-->
+       <div class="startinvisible" id="sankeyhtml">
+         <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://plotly.com/~watkin/6.embed" height="525" width="100%"></iframe>
                <p id="footnote"> Source: UN WFP Survey (2020). Responses of "Does not apply", "Other", or "NS / NR" (blank) are not included in the diagram. </p>
        </div>
      </div>
@@ -366,6 +471,23 @@
 
 <script type="text/javascript">
     var controller = new ScrollMagic.Controller();
+/*
+    new ScrollMagic.Scene({triggerElement: "#titletext"})
+        .setClassToggle("#sankey1", "deactive")
+        .addTo(controller);
+
+        new ScrollMagic.Scene({triggerElement: "#titletext"})
+            .setClassToggle("#sankey2", "deactive")
+            .addTo(controller);
+
+            new ScrollMagic.Scene({triggerElement: "#titletext"})
+                .setClassToggle("#sankey3", "deactive")
+                .addTo(controller);
+
+                new ScrollMagic.Scene({triggerElement: "#titletext"})
+                    .setClassToggle("#sankey4", "deactive")
+                    .addTo(controller);
+*/
 
     	new ScrollMagic.Scene({triggerElement: "#text1"})
         	.setClassToggle(".text1opacity", "active")
@@ -431,9 +553,13 @@
                     .setClassToggle("#sankey4", "active")
                     .addTo(controller);
 
-              new ScrollMagic.Scene({triggerElement: "#textsankeyhtml"})
+              new ScrollMagic.Scene({triggerElement: "#invisibletext"})
                   .setClassToggle("#sankey4", "deactive")
                   .addTo(controller);
+
+                  new ScrollMagic.Scene({triggerElement: "#invisibletext"})
+                      .setClassToggle("#footnotefixed", "deactive")
+                      .addTo(controller);
 
                   new ScrollMagic.Scene({triggerElement: "#textsankeyhtml"})
                       .setClassToggle("#sankeyhtml", "active")
