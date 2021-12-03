@@ -7,6 +7,8 @@
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+  <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"> </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.1.1/d3.min.js"></script>
     <style>
 
 		p {
@@ -19,10 +21,6 @@
 		}
 
 		svg {
-			width:100%;
-			height:600px;
-			padding-left:5%;
-			padding-right:10px;
 		}
 
 		h1 {
@@ -171,7 +169,7 @@
      opacity:1;
    }
 
-   #invisibletext{
+   #invisibletext #invisibletext2{
      opacity:0;
    }
 
@@ -183,18 +181,43 @@
          -webkit-transition: opacity 0.8s;
         }
 
-    #h-work {
-         font-size:30px;
-         fill:blue;
-         opacity:0;
-         transition: opacity 0.8s;
-          -webkit-transition: opacity 0.8s;
-         }
-
-         #footnote {
-           margin-left: 8%;
+         #footnoteb3 {
            font-size: 10px;
+           position: fixed;
+           top: 20vh;
+           left:10%;
+           z-index: 5;
           }
+
+          #headerb1 {
+            font-size: 20px;
+            position: fixed;
+            top: 15vh;
+            left:50%;
+            z-index: 5;
+            transition: opacity 0.8s;
+             -webkit-transition: opacity 0.8s;
+           }
+
+           #headerb2 {
+             font-size: 20px;
+             position: fixed;
+             top: 15vh;
+             left:50%;
+             z-index: 5;
+             transition: opacity 0.8s;
+              -webkit-transition: opacity 0.8s;
+            }
+
+          #headerb3 {
+            font-size: 20px;
+            position: fixed;
+            top: -10vh;
+            left:10%;
+            z-index: 5;
+            transition: opacity 0.8s;
+             -webkit-transition: opacity 0.8s;
+           }
 
 	.active {
         	opacity:1;
@@ -204,10 +227,50 @@
     .deactive {
             opacity:0;
             pointer-events:none;
-
         }
 
-	</style>
+
+    circle {
+      fill: cadetblue;
+    }
+
+#bubble1{
+  position: fixed;
+  z-index:10;
+  top: 60vh;
+  left: 45%;
+  transform: translateY(-50%);
+  transition: opacity 0.8s;
+  -webkit-transition: opacity 0.8s;
+}
+
+#bubblediv{
+  position:fixed;
+  z-index:8;
+  top: 20vh;
+  left: 25%;
+}
+
+#bubble2{
+  position: fixed;
+  z-index:8;
+  top: 60vh;
+  left: 25%;
+  transition: opacity 0.8s;
+  -webkit-transition: opacity 0.8s;
+}
+
+#bubble3{
+  position: fixed;
+  z-index:1;
+  top: 32.5vh;
+  left: 40%;
+  transform: translateY(-50%);
+  transition: opacity 0.8s;
+  -webkit-transition: opacity 0.8s;
+}
+
+</style>
 
 
 </head>
@@ -237,7 +300,7 @@
             for the individual are not well understood. When conditions are right, migration can bring mutual benefits --
             supporting local economies in the U.S. as well as the migrants' families back home. </p>
 
-      <p id="text1"> Join us as we explore the numbers behind these stories. Scroll or click below to get started:  </p>
+      <p id="text1"> Join us as we explore the numbers behind these stories. Scroll or click below to get started:   </p>
 
          <h3> <a href="#TheJourney"> The Journey:</a> Where migrants settle in the United States </h3>
          <h3> <a href="#LocalJobs"> Local Jobs:</a> Where migrants work in their chosen destinations </h3>
@@ -416,43 +479,113 @@
 
    <div class="row">
 
-     <div class="col-12">
+     <div class="col-4">
 
        <h3 id="FamilyNeeds"> Family Needs </h3>
 
-       <p id="text6"> Having found work in their new community, migrants frequently send back some income to their families back home in the form of remittances.
-         <a href=https://news.un.org/en/story/2019/06/1040581> According to the UN,</a> these transfers represent just 15 percent of what migrants earn on average -- meaning that the vast majority
-         of their earnings can benefit local economies in the US. Nonetheless, remittances are a critical income source for many relatives back home --
-         supporting one in nine families globally and about one in four in the UN WFP survey of Northern Triangle households.     </p>
+       <p id="textb1"> Having found work in their new community, migrants often send money to their families back home in the form of remittances. </p>
+       <br><br>
+       <p> But how does this look in practice? Let's consider a worker's income, represented by this series of bubbles.</p>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
 
-         <p> The vast majority of these households use remittances for basic needs like food, health, and utility services. Explore the visual below to learn more... </p>
+       <p id="textb2"> <a href=https://news.un.org/en/story/2019/06/1040581> According to the UN,</a>
+         just 15% of migrants' earnings are sent to families on average --
+         meaning that the vast majority can benefit local economies in the U.S. </p>
+         <br><br>
+         <p>
+          Nonetheless, remittances are a critical income source for many relatives back home --
+                  supporting one in nine families globally and about one in four in the UN WFP survey
+                  of Northern Triangle households.     </p>
+
+        <br><br>
+        <br><br>
+        <br><br>
+        <br><br>
+        <br><br>
+        <br><br>
 
 
-         <div id="content">
-          <svg width="400" height="400">
+         <p id="textb3"> The vast majority of these households use remittances for basic needs like food, health, and utility services. </p>
+         <br><br>
+         <p> Of the survey's 1300+ households that received remittances, nearly 90% noted food among their uses. </p>
+         <br><br>
+         <p> Hover over the visual to learn more... </p>
+     </div>
+
+     <div class="col-8">
+
+        <div>
+          <p id="headerb1" class="startinvisible"> Of a worker's income... </p>
+          <svg class="startinvisible" id="bubble1" width="400" height="400">
           </svg>
-        </div>
+
+          <p id="headerb2" class="startinvisible"> Most stays local, while some is sent back to families... </p>
+            <svg id="bubblediv" width="700" height="400">
+                <g class="startinvisible" id="bubble2" transform="translate(50, 200)"></g>
+            </svg>
+       </div>
+
 
          <div id="remittancebubbles">
-                <p> REMITTANCE DIAGRAM CAN GO HERE :) </p>
-                 <p id="footnote"> Source: UN WFP Survey (2020). Responses of "Does not apply", "Other", or "NS / NR" (blank) are not included in the diagram. </p>
+               <div class="startinvisible" id="bubble3">
+                 <p id="headerb3">...Where most households use the money for basic needs. </p>
+                  <svg width="800" height="100">
+                    <circle id = "myCircle" cx="50" cy="50" r="10" ></circle>
+                    <circle id = "myCircle" cx="150" cy="50" r="20" ></circle>
+                    <circle id = "myCircle" cx="250" cy="50" r="30" ></circle>
+                    <circle id = "myCircle" cx="350" cy="50" r="50" ></circle>
+                    <circle id = "myCircle" cx="450" cy="50" r="30"  ></circle>
+                    <circle id = "myCircle" cx="550" cy="50" r="20"  ></circle>
+                    <circle id = "myCircle" cx="650" cy="50" r="10"  ></circle>
+                  </svg>
+                  <p id="footnoteb3"> Source: UN WFP Survey (2020). Responses of "Does not apply", "Other", or "NS / NR" (blank) are not included in the diagram. </p>
+                </div>
          </div>
-
-         <p>
-    <br><br>
-         By understanding the journey to a new location, career, and lifestyle, we can start to learn more about the daily experiences of migrants who are adjusting to a wave of changes.
-         We hope to begin telling a more nuanced story about the realities and decisions these people face.
-         <br><br>
-         What could this information lead to? By highlighting the immense challenge of migration and employment, <a href=http://migration.mit.edu/about.html> these findings could support calls</a> for social protection programs
-         (to stabilize home country conditions) as well as <a href=https://www.cgdev.org/sites/default/files/harnessing-northern-triangle-migration-for-mutual-benefit.pdf> improved legal pathways</a> for those who do wish to migrate.
-         And despite the increasing role of remittances, transaction costs are reducing the direct flow of funds to families in need.
-         <br><br>
-         You can find more details about the survey data -- and their broader implications -- in the following links.
-       </p>
      </div>
-   </div>
-
    <br><br>
+   <br><br>
+   <br><br>
+   <br><br>
+   <br><br>
+   <br><br>
+   <br><br>
+   <br><br>
+   <br><br>
+   <br><br>
+   <br><br>
+   <p id="invisibletext2"> . </p>
+   <br><br>
+   <br><br>
+   <br><br>
+   <br><br>
+   <br><br>
+   <br><br>
+   <br><br>
+
+ </div>
+
+
+   <div class="row">
+     <div class="col-12">
+       <h3> Final Thoughts </h3>
+       <p id="textf">
+       By understanding the journey to a new location, career, and lifestyle, we can start to learn more about the daily experiences of migrants who are adjusting to a wave of changes.
+       We hope to begin telling a more nuanced story about the realities and decisions these people face.
+       <br><br>
+       What could this information lead to? By highlighting the immense challenge of migration and employment, <a href=http://migration.mit.edu/about.html> these findings could support calls</a> for social protection programs
+       (to stabilize home country conditions) as well as <a href=https://www.cgdev.org/sites/default/files/harnessing-northern-triangle-migration-for-mutual-benefit.pdf> improved legal pathways</a> for those who do wish to migrate.
+       And despite the increasing role of remittances, transaction costs are reducing the direct flow of funds to families in need.
+       <br><br>
+       You can find more details about the survey data -- and their broader implications -- in the following links.
+     </p>
+     <br><br>
+     </div>
+    </div>
 
    <div class="row">
 
@@ -467,27 +600,19 @@
      </div>
 
      <div class="col-9">
-       <div>
-               <img src="assets/img/report_cropped.png">
-        </div>
+       <h3> Acknowledgments </h3>
+       <p style="font-size:13px"> This website represents our final project for MIT's Fall 2021 course in Big Data, Visualization and Society (11.454).<br>
+         We greatly appreciate the guidance of Ashley Louie, Niko McGlashan, Alberto Meouchi, and the full teaching staff led by Professor Sarah Williams.<br>
+         We also received helpful feedback from Rosella Bottone and others from our partners at the UN WFP and Migration Policy Institute.  </p>
+
      </div>
    </div>
 
    <br><br>
-
-   <div class="row">
-     <div class="col-12">
-
-       <h3> Acknowledgments </h3>
-       <p style="font-size:12px"> This website represents our final project for MIT's Fall 2021 course in Big Data, Visualization and Society (11.454).<br>
-         We greatly appreciate the guidance of Ashley Louie, [other TAs here], and the full teaching staff led by Professor Sarah Williams.<br>
-         We also received helpful feedback from Rosella Bottone and others from our partners at the UN WFP and Migration Policy Institute.  </p>
-
-     </div>
-    </div>
   </div>
 
   </main><!-- /.container -->
+
 </body>
 
 <script type="text/javascript">
@@ -590,46 +715,178 @@
                       .setClassToggle("#sankeyhtml", "active")
                       .addTo(controller);
 
-        new ScrollMagic.Scene({triggerElement: "#text6"})
+        new ScrollMagic.Scene({triggerElement: "#textb1"})
             .setClassToggle("#sankeyhtml", "deactive")
             // .setClassToggle("#sankey4", "active")
             .addTo(controller);
 
+            new ScrollMagic.Scene({triggerElement: "#textb1"})
+                .setClassToggle("#headerb1", "active")
+                // .setClassToggle("#sankey4", "active")
+                .addTo(controller);
+
+            new ScrollMagic.Scene({triggerElement: "#textb1"})
+                .setClassToggle("#bubble1", "active")
+                // .setClassToggle("#sankey4", "active")
+                .addTo(controller);
+
+                new ScrollMagic.Scene({triggerElement: "#textb2"})
+                    .setClassToggle("#headerb1", "deactive")
+                    // .setClassToggle("#sankey4", "active")
+                    .addTo(controller);
+
+                new ScrollMagic.Scene({triggerElement: "#textb2"})
+                    .setClassToggle("#bubble1", "deactive")
+                    // .setClassToggle("#sankey4", "active")
+                    .addTo(controller);
+
+                    new ScrollMagic.Scene({triggerElement: "#textb2"})
+                        .setClassToggle("#headerb2", "active")
+                        // .setClassToggle("#sankey4", "active")
+                        .addTo(controller);
+
+                new ScrollMagic.Scene({triggerElement: "#textb2"})
+                    .setClassToggle("#bubble2", "active")
+                    // .setClassToggle("#sankey4", "active")
+                    .addTo(controller);
+
+                    new ScrollMagic.Scene({triggerElement: "#textb3"})
+                        .setClassToggle("#headerb2", "deactive")
+                        // .setClassToggle("#sankey4", "active")
+                        .addTo(controller);
+
+                    new ScrollMagic.Scene({triggerElement: "#textb3"})
+                        .setClassToggle("#bubble2", "deactive")
+                        // .setClassToggle("#sankey4", "active")
+                        .addTo(controller);
+
+            new ScrollMagic.Scene({triggerElement: "#textb3"})
+                .setClassToggle("#bubble3", "active")
+                // .setClassToggle("#sankey4", "active")
+                .addTo(controller);
+
+                new ScrollMagic.Scene({triggerElement: "#invisibletext2"})
+                    .setClassToggle("#bubble3", "deactive")
+                    // .setClassToggle("#sankey4", "active")
+                    .addTo(controller);
+
 
 // BUBBLE D3 SCRIPT
 
-            var width = 400, height = 400
+var width1 = 400, height1 = 400
 
-            var numNodes = 100
-            var nodes = d3.range(numNodes).map(function(d) {
-            	return {radius: Math.random() * 25}
-            })
+var numNodes1 = 50
+var nodes1 = d3.range(numNodes1).map(function(d) {
+	return {radius: 20}
+})
 
-            var simulation = d3.forceSimulation(nodes)
-            	.force('charge', d3.forceManyBody().strength(5))
-            	.force('center', d3.forceCenter(width / 2, height / 2))
-            	.force('collision', d3.forceCollide().radius(function(d) {
-            		return d.radius
-            	}))
-            	.on('tick', ticked);
+var simulation1 = d3.forceSimulation(nodes1)
+	.force('charge', d3.forceManyBody().strength(5))
+	.force('center', d3.forceCenter(width1 / 2, height1 / 2))
+	.force('collision', d3.forceCollide().radius(function(d) {
+		return d.radius
+	}))
+	.on('tick', ticked1);
 
-            function ticked() {
-            	var u = d3.select('svg')
-            		.selectAll('circle')
-            		.data(nodes)
-            		.join('circle')
-            		.attr('r', function(d) {
-            			return d.radius
-            		})
-            		.attr('cx', function(d) {
-            			return d.x
-            		})
-            		.attr('cy', function(d) {
-            			return d.y
-            		})
-            }
+function ticked1() {
+	var u = d3.select('#bubble1')
+		.selectAll('circle')
+		.data(nodes1)
+		.join('circle')
+		.attr('r', function(d) {
+			return d.radius
+		})
+		.attr('cx', function(d) {
+			return d.x
+		})
+		.attr('cy', function(d) {
+			return d.y
+		})
+}
 
 
+// 85-15 scripts
+
+var width = 700, height = 400;
+var colorScale = ['lightgreen', 'cadetblue', '#B19CD9'];
+var xCenter = [ 300, 500];
+
+var numNodes = 50;
+var nodes = d3.range(numNodes).map(function(d, i) {
+	return {
+		radius: 20,
+		category: [i %2]
+	}
+});
+
+var simulation = d3.forceSimulation(nodes)
+	.force('charge', d3.forceManyBody().strength(5))
+	.force('x', d3.forceX().x(function(d) {
+		return xCenter[d.category];
+	}))
+	.force('collision', d3.forceCollide().radius(function(d) {
+		return d.radius;
+	}))
+	.on('tick', ticked);
+
+function ticked() {
+	var b2 = d3.select('#bubble2')
+		.selectAll('circle')
+		.data(nodes)
+		.join('circle')
+		.attr('r', function(d) {
+			return d.radius;
+		})
+		.style('fill', function(d) {
+			return colorScale[d.category];
+		})
+		.attr('cx', function(d) {
+			return d.x;
+		})
+		.attr('cy', function(d) {
+			return d.y;
+		});
+}
+
+
+
+
+// remittance uses script
+
+//radiusData is an array containing the new radius for the circle elements
+  circleData = [[10, "rgb(246, 239, 247)"], [15, "rgb(189,201,225)"],
+
+  [20, "rgb(103,169,207)"], [25, "rgb(28,144,153)"], [30, "rgb(1,108,89)"]];
+
+  //Select the div element
+  selectExample = d3.select("#data_example2");
+
+  //We'll select all the circle from within the selected <div> element
+  selectExample.selectAll("circle")
+    .data(circleData)
+    .attr("r", function(d){return d[0]})
+    .style("fill", function(d){return d[1]});
+
+/*
+var width = 300, height = 300
+var nodes = [{}, {}, {}, {}, {}]
+
+
+function ticked() {
+	d3.select('svg')
+		.selectAll('circle')
+		.data(nodes)
+		.join('circle')
+		.attr('r', 5)
+		.attr('cx', function(d) {
+			return d.x
+		})
+		.attr('cy', function(d) {
+			return d.y
+		});
+}
+
+*/
 
 </script>
 </body>
