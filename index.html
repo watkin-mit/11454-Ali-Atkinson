@@ -9,7 +9,22 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
   <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"> </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.1.1/d3.min.js"></script>
+  <!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<!-- Load color scale -->
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+<!-- Create a div where the graph will take place -->
+<!-- A bit of CSS: change stroke color of circle on hover (white -> black) -->
     <style>
+    .bubbles {
+      stroke-width: 2px;
+      stroke: white;
+    }
+    .bubbles:hover {
+      stroke: black;
+    }
 
 		p {
 			font-family: 'Lora', sans-serif;
@@ -131,6 +146,19 @@
   pointer-events: none;
 }
 
+#starttheevents{
+  opacity:1;
+  pointer-events: all;
+}
+
+.noevents{
+  pointer-events: none;
+}
+
+#my_dataviz{
+  pointer-events: all;
+}
+
 .sankeydiv{
    width:500px; /*container-width*/
    overflow:hidden; /*hide bounds of image */
@@ -209,9 +237,9 @@
          #footnoteb3 {
            font-size: 10px;
            position: fixed;
-           top: 22vh;
+           top: 45vh;
            left:10%;
-           z-index: 5;
+           z-index: -5;
           }
 
           #headerb1 {
@@ -237,9 +265,9 @@
           #headerb3 {
             font-size: 20px;
             position: fixed;
-            top: -10vh;
-            left:10%;
-            z-index: 5;
+            top: 13vh;
+            left:15%;
+            z-index: -5;
             transition: opacity 0.8s;
              -webkit-transition: opacity 0.8s;
            }
@@ -248,7 +276,7 @@
              font-size: 20px;
              position: fixed;
              color: #B18742;
-             top: 83vh;
+             top: 85vh;
              left:54%;
              z-index: 5;
              transition: opacity 0.8s;
@@ -259,7 +287,7 @@
               font-size: 20px;
               position: fixed;
               color: #695195;
-              top: 83vh;
+              top: 85vh;
               left:72%;
               z-index: 5;
               transition: opacity 0.8s;
@@ -270,9 +298,9 @@
                font-size: 20px;
                position: fixed;
                color: #695195;
-               top: 15vh;
+               top: 35vh;
                left:1%;
-               z-index: 5;
+               z-index: -5;
                transition: opacity 0.8s;
                 -webkit-transition: opacity 0.8s;
               }
@@ -297,8 +325,8 @@
 
 #bubble1{
   position: fixed;
-  z-index:10;
-  top: 60vh;
+  z-index:4;
+  top: 65vh;
   left: 45%;
   transform: translateY(-50%);
   transition: opacity 0.8s;
@@ -355,7 +383,7 @@
      		<h1 id="titletext"> Migration's Mutual Benefits</h1>
      	</div>
       <div class="col-12">
-        <h2>How Central American migrants are supporting local economies and their families back home</h2>
+        <h2>Central American workers are supporting local US economies and their families back home in needed ways</h2>
         <br>
         <h3>Ilham Ali and Will Atkinson&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -608,14 +636,11 @@
 
         <div>
           <p id="headerb1" class="invisiblebubbles"> Of a worker's income... </p>
-          <svg class="invisiblebubbles" id="bubble1" width="400" height="400">
-          </svg>
+          <img class="invisiblebubbles" id="bubble1" src="assets/img/bubble1.png">
 
           <p id="headerb2" class="invisiblebubbles"> Most stays local, while some is sent back to families... </p>
-            <svg class="invisiblebubbles" id="bubble2" width="400" height="400">
-            </svg>
-            <svg class="invisiblebubbles" id="bubble22" width="400" height="400">
-            </svg>
+          <img class="invisiblebubbles" id="bubble2" src="assets/img/bubble2.png">
+
             <p id="b2label1" class="invisiblebubbles"> Local economy </p>
             <p id="b2label2" class="invisiblebubbles"> Remittance to family </p>
 
@@ -626,17 +651,14 @@
          <div id="remittancebubbles">
                <div class="invisiblebubbles" id="bubble3">
                  <p id="headerb3">...Where most households use the money for basic needs. </p>
-                  <svg width="800" height="100">
-                    <circle id = "myCircle" cx="50" cy="50" r="10" ></circle>
-                    <circle id = "myCircle" cx="150" cy="50" r="20" ></circle>
-                    <circle id = "myCircle" cx="250" cy="50" r="30" ></circle>
-                    <circle id = "myCircle" cx="350" cy="50" r="50" ></circle>
-                    <circle id = "myCircle" cx="450" cy="50" r="30"  ></circle>
-                    <circle id = "myCircle" cx="550" cy="50" r="20"  ></circle>
-                    <circle id = "myCircle" cx="650" cy="50" r="10"  ></circle>
-                  </svg>
-                  <p id="b3label"> Housing &nbsp;   Education  &nbsp;  &nbsp;&nbsp;Health &nbsp;
-                      &nbsp; &nbsp; &nbsp; Food  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; Utilities &nbsp;  &nbsp;   Clothes  &nbsp;  &nbsp;&nbsp;&nbsp;Saving</p>
+
+
+                 <div id="my_dataviz" class="noevents" >
+
+                 </div>
+
+                  <p id="b3label"> Housing  Education Health &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      Food Purchase  &nbsp; &nbsp; &nbsp; &nbsp;  Utilities &nbsp;  &nbsp;   Clothes  &nbsp;Saving</p>
 
                   <br><br>
                   <p id="footnoteb3"> Source: UN WFP Survey (2021). Responses of "Does not apply", "Other", or "NS / NR" (blank) are not included in the diagram.
@@ -904,11 +926,20 @@
                 // .setClassToggle("#sankey4", "active")
                 .addTo(controller);
 
+                new ScrollMagic.Scene({triggerElement: "#textb3"})
+                    .setClassToggle("#my_dataviz", "active")
+                    // .setClassToggle("#sankey4", "active")
+                    .addTo(controller);
+
                 new ScrollMagic.Scene({triggerElement: "#invisibletext2"})
                     .setClassToggle("#bubble3", "deactive")
                     // .setClassToggle("#sankey4", "active")
                     .addTo(controller);
 
+                    new ScrollMagic.Scene({triggerElement: "#invisibletext2"})
+                        .setClassToggle("#my_dataviz", "deactive")
+                        // .setClassToggle("#sankey4", "active")
+                        .addTo(controller);
 
 // BUBBLE D3 SCRIPT
 
@@ -928,6 +959,12 @@ var simulation1 = d3.forceSimulation(nodes1)
 
 function ticked1() {
 	var u = d3.select('#bubble1')
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")")
 		.selectAll('circle')
 		.data(nodes1)
 		.join('circle')
@@ -1072,6 +1109,105 @@ function ticked2() {
     .data(circleData)
     .attr("r", function(d){return d[0]})
     .style("fill", function(d){return d[1]});
+
+
+
+// THE NEW HOVER FIGURE
+
+    // set the dimensions and margins of the graph
+    var margin = {top: 10, right: 20, bottom: 30, left: 50},
+        width = 750 - margin.left - margin.right,
+        height = 420 - margin.top - margin.bottom;
+
+    // append the svg object to the body of the page
+    var svg3 = d3.select("#my_dataviz")
+      .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+        .attr("transform",
+              "translate(" + margin.left + "," + margin.top + ")");
+
+    //Read the data
+    d3.csv("https://raw.githubusercontent.com/argentinaali1/123/main/remittanceuses2.csv", function(data) {
+
+      // Add X axis
+      var x = d3.scaleLinear()
+        .domain([0, 40])
+        .range([ 0, width ]);
+
+
+      // Add Y axis
+      var y = d3.scaleLinear()
+        .domain([2.5, 3.5])
+        .range([ height, 0]);
+
+
+      // Add a scale for bubble size
+      var z = d3.scaleLinear()
+        .domain([0, 60])
+        .range([ 10,70]);
+
+
+      // Add a scale for bubble color
+      var myColor = d3.scaleOrdinal()
+        .domain(["Housing", "Education", "Health", "Food", "Utilities", "Clothes", "Saving"])
+        .range(d3.schemeCategory20c);
+
+
+      // -1- Create a tooltip div that is hidden by default:
+      var tooltip = d3.select("#my_dataviz")
+        .append("div")
+          .style("opacity", 0)
+          .attr("class", "tooltip")
+          .style("background-color", "black")
+          .style("border-radius", "5px")
+          .style("padding", "10px")
+          .style("color", "white")
+
+      // -2- Create 3 functions to show / update (when mouse move but stay on same circle) / hide the tooltip
+      var showTooltip = function(d) {
+        tooltip
+          .transition()
+          .duration(200)
+        tooltip
+          .style("opacity", 1)
+          .html("Remittance Use: " + d.name + ", Survey Percent: " + d.percents )
+          .style("left", (d3.mouse(this)[0]+30) + "px")
+          .style("top", (d3.mouse(this)[1]+30) + "px")
+      }
+      var moveTooltip = function(d) {
+        tooltip
+          .style("left", (d3.mouse(this)[0]+30) + "px")
+          .style("top", (d3.mouse(this)[1]+30) + "px")
+      }
+      var hideTooltip = function(d) {
+        tooltip
+          .transition()
+          .duration(200)
+          .style("opacity", 0)
+      }
+
+      // Add dots
+  svg3.append('g')
+    .selectAll("dot")
+    .data(data)
+    .enter()
+    .append("circle")
+      .attr("class", "bubbles")
+      .attr("cx", function (d) { return x(d.len); } )
+      .attr("cy", function (d) { return y(d.y); } )
+      .attr("r", function (d) { return z(d.radius); } )
+      .style("fill", '#695195' )
+    // -3- Trigger the functions
+    .on("mouseover", showTooltip )
+    .on("mousemove", moveTooltip )
+    .on("mouseleave", hideTooltip )
+
+  })
+
+
+
 
 /*
 var width = 300, height = 300
