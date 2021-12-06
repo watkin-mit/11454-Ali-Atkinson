@@ -46,6 +46,13 @@
       color: #B18742;
     }
 
+    h4 {
+      font-family: 'Lora', sans-serif;
+      font-size:20px;
+      font-weight:80;
+      color: #695195;
+    }
+
     a {
         color: #695195;
         font-weight:400;
@@ -107,7 +114,12 @@
 */
 
 .startinvisible{
-  opacity:0
+  opacity:0;
+}
+
+.invisiblebubbles{
+  opacity:0;
+  pointer-events: none;
 }
 
 .sankeydiv{
@@ -184,7 +196,7 @@
          #footnoteb3 {
            font-size: 10px;
            position: fixed;
-           top: 20vh;
+           top: 22vh;
            left:10%;
            z-index: 5;
           }
@@ -192,7 +204,7 @@
           #headerb1 {
             font-size: 20px;
             position: fixed;
-            top: 15vh;
+            top: 30vh;
             left:50%;
             z-index: 5;
             transition: opacity 0.8s;
@@ -202,7 +214,7 @@
            #headerb2 {
              font-size: 20px;
              position: fixed;
-             top: 15vh;
+             top: 30vh;
              left:50%;
              z-index: 5;
              transition: opacity 0.8s;
@@ -219,6 +231,39 @@
              -webkit-transition: opacity 0.8s;
            }
 
+           #b2label1 {
+             font-size: 20px;
+             position: fixed;
+             color: #B18742;
+             top: 82vh;
+             left:54%;
+             z-index: 5;
+             transition: opacity 0.8s;
+              -webkit-transition: opacity 0.8s;
+            }
+
+            #b2label2 {
+              font-size: 20px;
+              position: fixed;
+              color: #695195;
+              top: 82vh;
+              left:72%;
+              z-index: 5;
+              transition: opacity 0.8s;
+               -webkit-transition: opacity 0.8s;
+             }
+
+             #b3label {
+               font-size: 20px;
+               position: fixed;
+               color: #695195;
+               top: 15vh;
+               left:1%;
+               z-index: 5;
+               transition: opacity 0.8s;
+                -webkit-transition: opacity 0.8s;
+              }
+
 	.active {
         	opacity:1;
     	}
@@ -231,8 +276,11 @@
 
 
     circle {
-      fill: cadetblue;
+      fill: #695195;
+;
     }
+
+    /*#3C393E // to color the first one black */
 
 #bubble1{
   position: fixed;
@@ -255,15 +303,27 @@
   position: fixed;
   z-index:8;
   top: 60vh;
-  left: 25%;
+  left: 45%;
+  transform: translateY(-50%);
   transition: opacity 0.8s;
   -webkit-transition: opacity 0.8s;
 }
 
+#bubble22{
+  position: fixed;
+  z-index:8;
+  top: 60vh;
+  left: 65%;
+  transform: translateY(-50%);
+  transition: opacity 0.8s;
+  -webkit-transition: opacity 0.8s;
+}
+
+
 #bubble3{
   position: fixed;
   z-index:1;
-  top: 32.5vh;
+  top: 47vh;
   left: 40%;
   transform: translateY(-50%);
   transition: opacity 0.8s;
@@ -394,9 +454,9 @@
       <br><br>
       <br><br>
       <br><br>
-      <br><br>
       <p id="textsankeyhtml"> Want to dig deeper? Explore for yourself by hovering over the image with your cursor. These paths reflect the past and present journeys of more than 1,300 Northern Triangle migrants --
       as surveyed by the UN World Food Programme in 2021. Nearly all chose the United States as their destination, though precise locations were not reported for privacy reasons. </p>
+      <br><br>
       <br><br>
       <br><br>
       <br><br>
@@ -498,7 +558,7 @@
 
        <p id="textb2"> <a href=https://news.un.org/en/story/2019/06/1040581> According to the UN,</a>
          just 15% of migrants' earnings are sent to families on average --
-         meaning that the vast majority can benefit the local economies where they work (like in the U.S.). </p>
+         meaning that the vast majority can benefit the local economies where they work. </p>
          <br><br>
          <p>
           Nonetheless, remittances are a critical income source for many relatives back home --
@@ -524,19 +584,24 @@
      <div class="col-8">
 
         <div>
-          <p id="headerb1" class="startinvisible"> Of a worker's income... </p>
-          <svg class="startinvisible" id="bubble1" width="400" height="400">
+          <p id="headerb1" class="invisiblebubbles"> Of a worker's income... </p>
+          <svg class="invisiblebubbles" id="bubble1" width="400" height="400">
           </svg>
 
-          <p id="headerb2" class="startinvisible"> Most stays local, while some is sent back to families... </p>
-            <svg id="bubblediv" width="700" height="400">
-                <g class="startinvisible" id="bubble2" transform="translate(50, 200)"></g>
+          <p id="headerb2" class="invisiblebubbles"> Most stays local, while some is sent back to families... </p>
+            <svg class="invisiblebubbles" id="bubble2" width="400" height="400">
             </svg>
+            <svg class="invisiblebubbles" id="bubble22" width="400" height="400">
+            </svg>
+            <p id="b2label1" class="invisiblebubbles"> Local economy </p>
+            <p id="b2label2" class="invisiblebubbles"> Remittance to family </p>
+
+
        </div>
 
 
          <div id="remittancebubbles">
-               <div class="startinvisible" id="bubble3">
+               <div class="invisiblebubbles" id="bubble3">
                  <p id="headerb3">...Where most households use the money for basic needs. </p>
                   <svg width="800" height="100">
                     <circle id = "myCircle" cx="50" cy="50" r="10" ></circle>
@@ -547,6 +612,10 @@
                     <circle id = "myCircle" cx="550" cy="50" r="20"  ></circle>
                     <circle id = "myCircle" cx="650" cy="50" r="10"  ></circle>
                   </svg>
+                  <p id="b3label"> Housing &nbsp;   Education  &nbsp;  &nbsp;&nbsp;Health &nbsp;
+                      &nbsp; &nbsp; &nbsp; Food  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; Utilities &nbsp;  &nbsp;   Clothes  &nbsp;  &nbsp;&nbsp;&nbsp;Saving</p>
+
+                  <br><br>
                   <p id="footnoteb3"> Source: UN WFP Survey (2021). Responses of "Does not apply", "Other", or "NS / NR" (blank) are not included in the diagram. </p>
                 </div>
          </div>
@@ -749,20 +818,61 @@
                         // .setClassToggle("#sankey4", "active")
                         .addTo(controller);
 
+                        new ScrollMagic.Scene({triggerElement: "#textb2"})
+                            .setClassToggle("#b2label1", "active")
+                            // .setClassToggle("#sankey4", "active")
+                            .addTo(controller);
+
+                            new ScrollMagic.Scene({triggerElement: "#textb2"})
+                                .setClassToggle("#b2label2", "active")
+                                // .setClassToggle("#sankey4", "active")
+                                .addTo(controller);
+
                 new ScrollMagic.Scene({triggerElement: "#textb2"})
                     .setClassToggle("#bubble2", "active")
                     // .setClassToggle("#sankey4", "active")
                     .addTo(controller);
+
+                    new ScrollMagic.Scene({triggerElement: "#textb2"})
+                        .setClassToggle("#bubble22", "active")
+                        // .setClassToggle("#sankey4", "active")
+                        .addTo(controller);
+
+                    new ScrollMagic.Scene({triggerElement: "#textb2"})
+                        .setClassToggle("#bubblediv", "active")
+                        // .setClassToggle("#sankey4", "active")
+                        .addTo(controller);
 
                     new ScrollMagic.Scene({triggerElement: "#textb3"})
                         .setClassToggle("#headerb2", "deactive")
                         // .setClassToggle("#sankey4", "active")
                         .addTo(controller);
 
+
+                    new ScrollMagic.Scene({triggerElement: "#textb3"})
+                        .setClassToggle("#b2label1", "deactive")
+                        // .setClassToggle("#sankey4", "active")
+                        .addTo(controller);
+
+                        new ScrollMagic.Scene({triggerElement: "#textb3"})
+                            .setClassToggle("#b2label2", "deactive")
+                            // .setClassToggle("#sankey4", "active")
+                            .addTo(controller);
+
                     new ScrollMagic.Scene({triggerElement: "#textb3"})
                         .setClassToggle("#bubble2", "deactive")
                         // .setClassToggle("#sankey4", "active")
                         .addTo(controller);
+
+                        new ScrollMagic.Scene({triggerElement: "#textb3"})
+                            .setClassToggle("#bubble22", "deactive")
+                            // .setClassToggle("#sankey4", "active")
+                            .addTo(controller);
+
+                        new ScrollMagic.Scene({triggerElement: "#textb3"})
+                            .setClassToggle("#bubblediv", "deactive")
+                            // .setClassToggle("#sankey4", "active")
+                            .addTo(controller);
 
             new ScrollMagic.Scene({triggerElement: "#textb3"})
                 .setClassToggle("#bubble3", "active")
@@ -778,7 +888,6 @@
 // BUBBLE D3 SCRIPT
 
 var width1 = 400, height1 = 400
-
 var numNodes1 = 50
 var nodes1 = d3.range(numNodes1).map(function(d) {
 	return {radius: 20}
@@ -800,6 +909,7 @@ function ticked1() {
 		.attr('r', function(d) {
 			return d.radius
 		})
+    .style('fill', '#3C393E')
 		.attr('cx', function(d) {
 			return d.x
 		})
@@ -810,7 +920,7 @@ function ticked1() {
 
 
 // 85-15 scripts
-
+/*
 var width = 700, height = 400;
 var colorScale = ['lightgreen', 'cadetblue', '#B19CD9'];
 var xCenter = [ 300, 500];
@@ -851,6 +961,73 @@ function ticked() {
 			return d.y;
 		});
 }
+*/
+
+// the 85 part of 85-15
+var width = 400, height = 400
+var numNodes = 43
+var nodes = d3.range(numNodes).map(function(d) {
+	return {radius:20}
+})
+
+var simulation = d3.forceSimulation(nodes)
+	.force('charge', d3.forceManyBody().strength(5))
+	.force('center', d3.forceCenter(width / 2, height / 2))
+	.force('collision', d3.forceCollide().radius(function(d) {
+		return d.radius
+	}))
+	.on('tick', ticked);
+
+function ticked() {
+	var u = d3.select('#bubble2')
+		.selectAll('circle')
+		.data(nodes)
+		.join('circle')
+    .style('fill', '#B18742')
+		.attr('r', function(d) {
+			return d.radius
+		})
+
+		.attr('cx', function(d) {
+			return d.x
+		})
+		.attr('cy', function(d) {
+			return d.y
+		})
+}
+
+// the 15% part of the chart
+var width2 = 400, height2 = 400
+
+var numNodes2 = 7
+var nodes2 = d3.range(numNodes2).map(function(d) {
+	return {radius: 20}
+})
+
+var simulation2 = d3.forceSimulation(nodes2)
+	.force('charge', d3.forceManyBody().strength(5))
+	.force('center', d3.forceCenter(width2 / 2, height2 / 2))
+	.force('collision', d3.forceCollide().radius(function(d) {
+		return d.radius
+	}))
+	.on('tick', ticked2);
+
+function ticked2() {
+	var u = d3.select('#bubble22')
+		.selectAll('circle')
+		.data(nodes2)
+		.join('circle')
+		.attr('r', function(d) {
+			return d.radius
+		})
+		.attr('cx', function(d) {
+			return d.x
+		})
+		.attr('cy', function(d) {
+			return d.y
+		})
+}
+
 
 
 
