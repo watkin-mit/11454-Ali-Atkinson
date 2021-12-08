@@ -146,17 +146,17 @@
   pointer-events: none;
 }
 
-#starttheevents{
-  opacity:1;
+/*          new ScrollMagic.Scene({triggerElement: "#textb3"})
+              .setClassToggle("#my_dataviz", "noevents")
+              // .setClassToggle("#sankey4", "active")
+              .addTo(controller);*/
+
+.starttheevents{
   pointer-events: all;
 }
 
 .noevents{
   pointer-events: none;
-}
-
-#my_dataviz{
-  pointer-events: all;
 }
 
 .sankeydiv{
@@ -265,7 +265,7 @@
           #headerb3 {
             font-size: 20px;
             position: fixed;
-            top: 13vh;
+            top: 5vh;
             left:15%;
             z-index: -5;
             transition: opacity 0.8s;
@@ -328,7 +328,7 @@
   z-index:4;
   top: 65vh;
   left: 45%;
-  height:70%;
+  height:65%;
   transform: translateY(-50%);
   transition: opacity 0.8s;
   -webkit-transition: opacity 0.8s;
@@ -654,8 +654,7 @@
                <div class="invisiblebubbles" id="bubble3">
                  <p id="headerb3">...Where most households use the money for basic needs. </p>
 
-
-                 <div id="my_dataviz" class="noevents" >
+                 <div id="my_dataviz">
 
                  </div>
 
@@ -694,6 +693,12 @@
 
    <div class="row">
      <div class="col-12">
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+       <br><br>
+
        <h3> Final Thoughts </h3>
        <p id="textf">
        By understanding the journey of migration to a new location, career, and lifestyle, we can start to learn more about the major transitions these people face.
@@ -929,7 +934,7 @@
                 .addTo(controller);
 
                 new ScrollMagic.Scene({triggerElement: "#textb3"})
-                    .setClassToggle("#my_dataviz", "active")
+                    .setClassToggle("#my_dataviz", "starttheevents")
                     // .setClassToggle("#sankey4", "active")
                     .addTo(controller);
 
